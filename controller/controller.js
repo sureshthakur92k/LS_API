@@ -35,6 +35,33 @@ class MainController {
         res.send(error.message)
     }
     }
+
+    //**********************************For New Registraion */
+
+    async NewRegistraion(req , res){
+      try {
+        
+          console.log("Controll call api");
+        //FirstName,LastName,FatherName,GrandFatherName,Address1,Address2,[State],City,[Block]
+          const pool = await poolPromise
+          const result = await pool.request()
+          .input('FirstName',sql.VarChar , req.body.FirstName)
+          .input('LastName',sql.VarChar , req.body.LastName)
+          .input('FatherName',sql.VarChar,req.body.FatherName)
+          .input('GrandFatherName',sql.VarChar , req.body.GrandFatherName)
+          .input('Address1',sql.VarChar , req.body.Address1)
+          .input('Address2',sql.VarChar,req.body.Address2)
+          .input('State',sql.VarChar , req.body.State)
+          .input('City',sql.VarChar , req.body.City)
+          .input('Block',sql.VarChar,req.body.Block)
+          .query(queries.Registration)
+          res.json(result)
+        
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+    }
     async updateData(req , res){
       try {
         if(req.body.password != null && req.body.name != null) {
@@ -83,7 +110,7 @@ class MainController {
       }
     }
     async GetCityByState(req , res){
-       
+       console.log("GetCityByState call");
       try {
 
         if(req.body.StateId != null) {

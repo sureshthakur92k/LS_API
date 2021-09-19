@@ -10,5 +10,6 @@ router.delete('/api/deleteData' , controller.deleteData);
 router.get('/api/GelAllState' , controller.GelAllState);
 router.post('/api/GetCityByState' , controller.GetCityByState);
 router.post('/api/GetBlockByCity' , controller.GetBlockByCity);
+router.post('/api/NewRegistraion' , controller.NewRegistraion);
 
 module.exports = router;

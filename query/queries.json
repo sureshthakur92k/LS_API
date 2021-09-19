@@ -6,5 +6,6 @@
     "updateUserDetails" : "UPDATE [dbo].[NodeJsTbl] SET password = @newPassword WHERE name = @userName",
     "GelAllState":"select * from LS_State order by StateName",
     "GetCityByState":"select c.cityid,c.cityname from LS_State as s inner join ls_City as c on c.stateid=s.StateId  where s.StateId=@StateId order by c.CityName ",
-    "GetBloclByCity":"select b.blockid,b.blockname from ls_city as c  join ls_block  as b on b.cityid=c.cityid where c.cityid=@CityId order by b.BlockName"
+    "GetBloclByCity":"select b.blockid,b.blockname from ls_city as c  join ls_block  as b on b.cityid=c.cityid where c.cityid=@CityId order by b.BlockName",
+    "Registration":"insert into LS_Registration(FirstName,LastName,FatherName,GrandFatherName,Address1,Address2,[State],City,[Block])values(@FirstName,@LastName,@FatherName,@GrandFatherName,@Address1,@Address2,@State,@City,@Block)"
 }
