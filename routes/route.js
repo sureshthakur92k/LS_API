@@ -11,5 +11,6 @@ router.get('/api/GelAllState' , controller.GelAllState);
 router.post('/api/GetCityByState' , controller.GetCityByState);
 router.post('/api/GetBlockByCity' , controller.GetBlockByCity);
 router.post('/api/NewRegistraion' , controller.NewRegistraion);
+router.get('/api/GetJob' , controller.GetJob);
 
 module.exports = router;

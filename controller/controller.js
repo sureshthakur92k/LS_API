@@ -109,6 +109,20 @@ class MainController {
         res.send(error.message)
       }
     }
+
+    
+    async GetJob(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetJobName)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
     async GetCityByState(req , res){
        console.log("GetCityByState call");
       try {
@@ -154,3 +168,16 @@ class MainController {
 
 const controller = new MainController()
 module.exports = controller;
+
+// declare @FirstName varchar(50)
+// declare @LastName varchar(50)
+// declare @BlockName varchar(50)
+
+// set @FirstName ='ssddd'
+// set @LastName ='Thakur'
+// set @BlockName ='Sakra'
+
+// select * from LS_Registration
+// where FirstName=@FirstName
+// or LastName=@LastName
+// or [Block] =@BlockName
