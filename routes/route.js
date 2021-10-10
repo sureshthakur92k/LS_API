@@ -12,5 +12,12 @@ router.post('/api/GetCityByState' , controller.GetCityByState);
 router.post('/api/GetBlockByCity' , controller.GetBlockByCity);
 router.post('/api/NewRegistraion' , controller.NewRegistraion);
 router.get('/api/GetJob' , controller.GetJob);
+router.get('/api/Get10thOr12thBardName' , controller.Get10thOr12thBardName);
+router.get('/api/GetUniversity' , controller.GetUniversity);
+router.get('/api/GetGradutionStream' , controller.GetGradutionStream);
+
+
+
+
 
 module.exports = router;

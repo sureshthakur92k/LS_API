@@ -123,6 +123,46 @@ class MainController {
         res.send(error.message)
       }
     }
+
+    async Get10thOr12thBardName(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.Get10thOr12thBardName)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+
+    async GetUniversity(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetUniversity)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+
+    async GetGradutionStream(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetGradutionStream)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+    
     async GetCityByState(req , res){
        console.log("GetCityByState call");
       try {
