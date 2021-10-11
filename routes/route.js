@@ -15,7 +15,8 @@ router.get('/api/GetJob' , controller.GetJob);
 router.get('/api/Get10thOr12thBardName' , controller.Get10thOr12thBardName);
 router.get('/api/GetUniversity' , controller.GetUniversity);
 router.get('/api/GetGradutionStream' , controller.GetGradutionStream);
-
+router.get('/api/GetSkinType' , controller.GetSkinType);
+router.get('/api/GetHeight' , controller.GetHeight);
 
 
 

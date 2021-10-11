@@ -54,6 +54,17 @@ class MainController {
           .input('State',sql.VarChar , req.body.State)
           .input('City',sql.VarChar , req.body.City)
           .input('Block',sql.VarChar,req.body.Block)
+
+          .input('TenthOr12BoardName',sql.VarChar,req.body.TenthOr12BoardName)
+          .input('PassingYear10th',sql.VarChar,req.body.PassingYear10th)
+          .input('PassingYear12th',sql.VarChar,req.body.PassingYear12th)
+          .input('PassingYearGradution',sql.VarChar,req.body.PassingYearGradution)
+          .input('percentageOf10th',sql.VarChar,req.body.percentageOf10th)
+          .input('percentageOf12th',sql.VarChar,req.body.percentageOf12th)
+          .input('percentageOfGradution',sql.VarChar,req.body.percentageOfGradution)
+          .input('streamsOf12th',sql.VarChar,req.body.streamsOf12th)
+          .input('Gradution',sql.VarChar,req.body.Gradution)
+          .input('streamsOfGradution',sql.VarChar,req.body.streamsOfGradution)
           .query(queries.Registration)
           res.json(result)
         
@@ -163,6 +174,31 @@ class MainController {
       }
     }
     
+    async GetSkinType(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetSkinType)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+
+     async GetHeight(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetHeight)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
     async GetCityByState(req , res){
        console.log("GetCityByState call");
       try {
