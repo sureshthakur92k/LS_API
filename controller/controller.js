@@ -65,6 +65,16 @@ class MainController {
           .input('streamsOf12th',sql.VarChar,req.body.streamsOf12th)
           .input('Gradution',sql.VarChar,req.body.Gradution)
           .input('streamsOfGradution',sql.VarChar,req.body.streamsOfGradution)
+
+          .input('Complexion',sql.VarChar,req.body.Complexion)
+          .input('Height',sql.VarChar,req.body.Height)
+          .input('PersonalEmail',sql.VarChar,req.body.PersonalEmail)
+          .input('PersonalPhone',sql.VarChar,req.body.PersonalPhone)
+          .input('ParentPhone',sql.VarChar,req.body.ParentPhone)
+          .input('Cast',sql.VarChar,req.body.Cast)
+          .input('SubCast',sql.VarChar,req.body.SubCast)
+          .input('Gender',sql.VarChar,req.body.Gender)
+          
           .query(queries.Registration)
           res.json(result)
         
@@ -249,6 +259,24 @@ class MainController {
        res.send(error.message)
      }
    }
+   async GetUserDetailsById(req , res){
+    console.log("GetUserDetailsById call");
+   try {
+
+     if(req.body.RegId != null) {
+       const pool = await poolPromise
+         const result = await pool.request()
+         .input('RegId',sql.VarChar , req.body.RegId)
+         .query(queries.GetUserDetailsById)
+         res.json(result)
+       } else {
+         res.send('All fields are required!')
+       }
+   } catch (error) {
+     res.status(500)
+     res.send(error.message)
+   }
+ }
     async GetBlockByCity(req , res){
        
       try {
