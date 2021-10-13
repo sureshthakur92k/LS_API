@@ -199,6 +199,19 @@ class MainController {
         res.send(error.message)
       }
     }
+    async GetCast(req , res){
+       
+      try {
+        const pool = await poolPromise
+          const result = await pool.request()
+          .query(queries.GetCast)
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+    
     async GetCityByState(req , res){
        console.log("GetCityByState call");
       try {
@@ -212,16 +225,30 @@ class MainController {
           } else {
             res.send('All fields are required!')
           }
-        // const pool = await poolPromise
-        //   const result = await pool.request()
-        //   .query(queries.GetCityByState)
-        //   res.json(result.recordset)
       } catch (error) {
         res.status(500)
         res.send(error.message)
       }
     }
 
+    async GetSubCastByCastId(req , res){
+      console.log("GetSubCastByCastId call");
+     try {
+
+       if(req.body.CastId != null) {
+         const pool = await poolPromise
+           const result = await pool.request()
+           .input('CastId',sql.VarChar , req.body.CastId)
+           .query(queries.GetSubCastByCastId)
+           res.json(result)
+         } else {
+           res.send('All fields are required!')
+         }
+     } catch (error) {
+       res.status(500)
+       res.send(error.message)
+     }
+   }
     async GetBlockByCity(req , res){
        
       try {

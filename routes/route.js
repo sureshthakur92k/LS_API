@@ -17,6 +17,8 @@ router.get('/api/GetUniversity' , controller.GetUniversity);
 router.get('/api/GetGradutionStream' , controller.GetGradutionStream);
 router.get('/api/GetSkinType' , controller.GetSkinType);
 router.get('/api/GetHeight' , controller.GetHeight);
+router.get('/api/GetCast' , controller.GetCast);
+router.post('/api/GetSubCastByCastId' , controller.GetSubCastByCastId);
 
 
 

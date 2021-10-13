@@ -13,6 +13,8 @@
     "GetUniversity":"select * from LS_University order by UniversityName",
     "GetGradutionStream":"select * from LS_UG_CourseName order by ug_coursename",
     "GetSkinType":"select * from LS_Skin",
-    "GetHeight":" select * from [LS_Height]"
+    "GetHeight":" select * from [LS_Height]",
+    "GetCast":"select castId,CastName from LS_Cast",
+    "GetSubCastByCastId":"select c.subcastid,c.subcastname from LS_Cast as s inner join LS_SubCast as c on c.castID=s.castid  where s.castId=@CastId order by c.subcastname"
 }
 
