@@ -19,7 +19,7 @@ router.get('/api/GetSkinType' , controller.GetSkinType);
 router.get('/api/GetHeight' , controller.GetHeight);
 router.get('/api/GetCast' , controller.GetCast);
 router.post('/api/GetSubCastByCastId' , controller.GetSubCastByCastId);
-router.get('/api/GetUserDetailsById' , controller.GetUserDetailsById);
+router.post('/api/GetUserDetailsById' , controller.GetUserDetailsById);
 
 
 
